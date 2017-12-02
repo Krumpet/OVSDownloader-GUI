@@ -1,0 +1,63 @@
+﻿<Window x:Name="MyWindow" x:Class="OVSDownloader_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OVSDownloader_GUI"
+        mc:Ignorable="d"
+        Title="OVSDownloader" Height="695.6" Width="790.2">
+    <StackPanel Margin="0,0,0,5.4">
+        <WebBrowser x:Name="WebBrowser1" Height="500" 
+            VerticalAlignment="Top" Width="760" Source="https://video.technion.ac.il"
+            Navigated="WebBrowser1_Navigated" Margin="10,10" />
+        <Grid HorizontalAlignment="Left" x:Name="Controls" Margin="12,0,0,0" VerticalAlignment="Top" Width="760" Height="137">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="FolderSelect" Grid.Row="0" Grid.Column="3" Content="Select Folder" Grid.RowSpan="1" Click="Button_Click"  />
+            <TextBox x:Name="FolderPath" TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1" />
+
+            <Label Content="Start:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" />
+            <Label Content="End:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+            <TextBox x:Name="StartVid" TextWrapping="Wrap" Text="1" Grid.Column="0" Grid.Row="3"  TextAlignment="Center" />
+            <TextBox x:Name="EndVid" TextWrapping="Wrap" Text="1" Grid.Column="1" Grid.Row="3" TextAlignment="Center" />
+            <Label Content="Format:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" />
+            <ComboBox x:Name="Format" Grid.Column="2" Grid.Row="3">
+                <ComboBoxItem IsSelected="True" Content="rtsp"/>
+                <ComboBoxItem Content="mms" IsEnabled="False" />
+            </ComboBox>
+            <Grid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="GoButton" Content="Let's Go!!!" Click="GoButton_Click" Grid.Column="0"/>
+                <Button x:Name="StopCurrent" Content="Stop download" Click="StopCurrent_OnClick" Grid.Column="1"/>
+                <Button x:Name="StopAll" Content="Stop all downloads" Click="StopAll_OnClick" Grid.Column="2"/>
+            </Grid>
+            <Grid Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="TitleInfo" TextWrapping="Wrap" Text="File Info" Grid.Row="0"/>
+                <TextBox x:Name="DownloadInfo" TextWrapping="Wrap" Text="Download Info" Grid.Row="1"/>
+            </Grid>
+            
+        </Grid>
+    </StackPanel>
+</Window>
