@@ -2,6 +2,7 @@
 A program to automate downloading video files from the Old Technion Video Server.
 
 Instructions:
+
 0. Download OVSDownloader-GUI.exe, msdl.exe, and cygwin1.dll, they all need to be in the same folder
 1. Run OVSDownloader-GUI.exe, Log in the browser window using the same credentials as for Moodle
 2. Choose download folder with the 'Select Folder' button - note that you should use a relatively short path and without Hebrew characters,
