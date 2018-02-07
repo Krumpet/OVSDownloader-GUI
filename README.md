@@ -1,6 +1,8 @@
 # OVSDownloader-GUI
 A program to automate downloading video files from the Old Technion Video Server.
 
+To download from the new server (Panopto), use https://github.com/urielha/Video.Technion
+
 Instructions:
 
 0. Download OVSDownloader-GUI.exe, msdl.exe, and cygwin1.dll, they all need to be in the same folder
